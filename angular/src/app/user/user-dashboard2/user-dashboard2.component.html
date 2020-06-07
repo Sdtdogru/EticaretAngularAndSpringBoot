@@ -1,0 +1,102 @@
+<!-- Outline variants section start -->
+<section id="outline-variants">
+
+    <div class="row text-left" matchHeight="card">
+        <div class="col-md-6 col-sm-12" *ngFor="let itm of products">
+            <div class="card card-outline-primary box-shadow-0 text-center">
+                <div class="card-content">
+                    <div class="card-body pt-3">
+                        <div class="row d-flex">
+                            <div class="col align-self-center">
+                                <img src="assets/img/elements/{{itm.img}}" alt="element 01" width="190">
+                            </div>
+                            <div class="col align-self-center">
+                                <h4 class="card-title mt-3">{{itm.productName}}</h4>
+                                <p class="card-text">{{itm.quantityPerUnit}}</p><br/>
+                                <p>{{itm.unitPrice}}</p>
+                                <button class="btn btn-raised btn-primary" [routerLink]="['/index/product/',itm.id]">Ürünü İncele</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="card card-outline-success box-shadow-0 text-center">
+                <div class="card-content">
+                    <div class="card-body">
+                        <img src="assets/img/elements/06.png" alt="element 02" width="225" class="mb-1">
+                        <h3 class="card-title">Ceramic Bottle</h3>
+                        <p class="card-text">456 items</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="card card-outline-danger box-shadow-0 text-center">
+                <div class="card-content">
+                    <div class="card-body pt-3">
+                        <div class="row d-flex">
+                            <div class="col align-self-center">
+                                <h4 class="card-title mt-3">Brand Minute</h4>
+                                <p class="card-text">Donut toffee candy brownie soufflé macaroon.</p>
+                                <button class="btn btn-raised btn-danger btn-darken-3">Buy Now</button>
+                            </div>
+                            <div class="col align-self-center">
+                                <img src="assets/img/elements/01.png" alt="element 03" width="190" class="float-right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="card card-outline-info box-shadow-0 text-center">
+                <div class="card-content">
+                    <div class="card-body pt-3">
+                        <div class="row d-flex">
+                            <div class="col align-self-center">
+                                <img src="assets/img/elements/07.png" alt="element 04" width="210" class="float-left mt-3">
+                            </div>
+                            <div class="col align-self-center">
+                                <h4 class="card-title mt-3">New Arrival</h4>
+                                <p class="card-text">Donut toffee candy brownie soufflé macaroon.</p>
+                                <button class="btn btn-raised btn-info btn-darken-3">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="card card-outline-warning box-shadow-0 text-center">
+                <div class="card-content">
+                    <div class="card-body">
+                        <img src="assets/img/elements/04.png" alt="element 05" width="250" class="mb-1">
+                        <h4 class="card-title">Storage Device</h4>
+                        <p class="card-text">945 items</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div class="card card-outline-primary box-shadow-0 text-center">
+                <div class="card-content">
+                    <div class="card-body pt-3">
+                        <div class="row d-flex">
+                            <div class="col align-self-center">
+                                <h4 class="card-title mt-3">New Arrival</h4>
+                                <p class="card-text">Donut toffee candy brownie soufflé macaroon.</p>
+                                <button class="btn btn-raised btn-primary btn-darken-3 white">Buy Now</button>
+                            </div>
+                            <div class="col align-self-center">
+                                <img src="assets/img/elements/11.png" alt="element 06" width="190" class="float-right">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Outline variants section end -->

@@ -1,0 +1,76 @@
+<div class="col-xl-12 col-lg-12 col-12">
+    <form #updateProductForm="ngForm">
+        <div class="card">
+            <div class="card-header">
+                <a class="btn btn-raised btn-round btn-success canter" [routerLink]="['/admin/product/productadd']">Yeni
+                    Ürün Ekle</a>
+            </div>
+            <div class="card-content">
+                <table class="table table-responsive-sm text-center">
+                    <thead>
+                    <tr>
+                        <th>Resim</th>
+                        <th>Fiyat</th>
+                        <th>Ürün</th>
+                        <th>Stok</th>
+                        <th>Status</th>
+                        <th>Güncelle</th>
+                        <th>Sil</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr *ngFor="let product of productMetadata">
+                        <input type="hidden" name="id" ngModel="{{prodoctId}}" >
+                        <input type="hidden"  name="quantityPerUnit" ngModel="{{product.quantityPerUnit}}" >
+                        <input type="hidden"  name="categoryId" ngModel="{{product.categoryId}}" >
+                        <td><img class="media-object round-media height-50" src="assets/img/elements/{{product.img}}"
+                                 alt="Generic placeholder image"/></td>
+                        <td>
+                            <a *ngIf="prodoctId ===product.id"><input type="text" name="unitPrice"
+                                                                      ngModel="{{product.unitPrice}}"></a>
+                            <a *ngIf="prodoctId !==product.id">{{product.unitPrice}}</a>
+                        </td>
+                        <td>
+                            <a *ngIf="prodoctId ===product.id"><input type="text" name="productName"
+                                                                      ngModel="{{product.productName}}"></a>
+                            <a *ngIf="prodoctId !==product.id">{{product.productName}}</a>
+                        </td>
+                        <td><a *ngIf="prodoctId ===product.id"><input type="text" name="unitsInStock"
+                                                                      ngModel="{{product.unitsInStock}}"></a>
+                            <a *ngIf="prodoctId !==product.id">{{product.unitsInStock}}</a></td>
+                        <td>
+                            <a *ngIf="prodoctId ===product.id"><input type="text" name="statu"
+                                                                      ngModel="{{product.statu}}"></a>
+                            <a *ngIf="prodoctId !==product.id">
+                                <a *ngIf="product.statu ===2" class="btn btn-raised btn-round btn-danger">Disabled</a>
+                                <a *ngIf="product.statu ===1" class="btn btn-raised btn-round btn-success">Active</a>
+                            </a>
+                        </td>
+                        <td><a *ngIf="prodoctId !==product.id" class="success" data-original-title="" title=""
+                               (click)="updateProduct(product.id)">
+                            <i class="ft-refresh-cw"></i>
+                        </a>
+                            <a *ngIf="prodoctId ===product.id" class="success" data-original-title="" title=""
+                               (click)="saveProduct(updateProductForm.value)">
+                                <i class="ft-check"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a *ngIf="prodoctId ===product.id" class="danger" data-original-title="" title="vazdec"
+                               (click)="giveUp()">
+                                <i class="ft-x"></i>
+                            </a>
+                            <a *ngIf="prodoctId !==product.id" class="danger" data-original-title="" title="sil"
+                               (click)="delete(product.id)">
+                                <i class="ft-x"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+</div>

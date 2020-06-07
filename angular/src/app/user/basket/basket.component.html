@@ -1,0 +1,80 @@
+<!--Shopping cart starts-->
+<section id="shopping-cart">
+    <div class="row text-left">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 *ngIf="basketProducts==null" class="card-title">Sepette Ürün Bulunmamaktadır...</h4>
+                    <h4 *ngIf="basketProducts!=null"class="card-title">Sepette Bekleyen Ürünler</h4>
+
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <table class="table table-responsive-md text-center">
+                            <thead>
+                            <tr>
+                                <th>Resim</th>
+                                <th>Ürün</th>
+                                <th>Fiyat</th>
+                                <th>Adet</th>
+                                <th>Miktar</th>
+                                <th>Sil</th>
+                                <th>Satın AL</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let basketProduct of basketProducts">
+
+                                <td><img class="media-object round-media" *ngFor="let basketProduc of basketProduct" src="assets/img/elements/{{basketProduc.img}}" alt="Generic placeholder image"
+                                         style="height: 75px;" /></td>
+                                <td *ngFor="let basketProduc of basketProduct">{{basketProduc.productName}}</td>
+                                <td *ngFor="let basketProduc of basketProduct">{{basketProduc.unitPrice}}</td>
+                                <td>
+                                    2
+                                    <div class="btn-group ml-1">
+                                        <a class="bg-info px-1 py-1 white font-medium-5" href="javascript:void(0)">-</a>
+                                        <a class="bg-info px-1 py-1 white font-medium-5" href="javascript:void(0)">+</a>
+                                    </div>
+                                </td>
+                                <td>$19.94</td>
+                                <td>
+                                    <a class="danger" data-original-title="" title="">
+                                        <i class="ft-trash font-medium-3"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a class="success" data-original-title="" title="">
+                                        <i class="ft-check font-medium-3"></i>
+                                    </a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+
+                                <td><b>Toplam</b></td>
+                                <td><b>$101.31</b></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button class="btn btn-success btn-raised">Continue</button> </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Shopping cart ends-->
+
